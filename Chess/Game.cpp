@@ -77,32 +77,6 @@ void Game::drawDesk(sf::RenderTarget& target, sf::RenderStates states) const
 	}
 }
 
-std::string Game::wichTexture(int cell, bool pieceColor) const
-{
-	if (cell / SIZE % 2 == 0)
-	{
-		if (cell % 2 == 0)
-		{
-			return (pieceColor) ? "WHollow" : "BFill";
-		}
-		else
-		{
-			return (pieceColor) ? "WFill" : "BHollow";
-		}
-	}
-	else
-	{
-		if (cell % 2 == 0)
-		{
-			return (pieceColor) ? "WFill" : "BHollow";
-		}
-		else
-		{
-			return (pieceColor) ? "WHollow" : "BFill";
-		}
-	}
-}
-
 void Game::drawPieces(sf::RenderTarget & target, sf::RenderStates states) const
 {
 	for (unsigned int i{ 0 }; i < DESK_SIZE; i++)
@@ -116,62 +90,62 @@ void Game::drawPieces(sf::RenderTarget & target, sf::RenderStates states) const
 			{
 			case Cell::BPawn:
 			{
-				shape.setTexture(&textures.at(wichTexture(i, false) + "Pawn"));
+				shape.setTexture(&textures.at("BPawn"));
 				break;
 			}
 			case Cell::BRook:
 			{
-				shape.setTexture(&textures.at(wichTexture(i, false) + "Rook"));
+				shape.setTexture(&textures.at("BRook"));
 				break;
 			}
 			case Cell::BKnight:
 			{
-				shape.setTexture(&textures.at(wichTexture(i, false) + "Knight"));
+				shape.setTexture(&textures.at("BKnight"));
 				break;
 			}
 			case Cell::BBishop:
 			{
-				shape.setTexture(&textures.at(wichTexture(i, false) + "Bishop"));
+				shape.setTexture(&textures.at("BBishop"));
 				break;
 			}
 			case Cell::BQueen:
 			{
-				shape.setTexture(&textures.at(wichTexture(i, false) + "Queen"));
+				shape.setTexture(&textures.at("BQueen"));
 				break;
 			}
 			case Cell::BKing:
 			{
-				shape.setTexture(&textures.at(wichTexture(i, false) + "King"));
+				shape.setTexture(&textures.at("BKing"));
 				break;
 			}
 			case Cell::WPawn:
 			{
-				shape.setTexture(&textures.at(wichTexture(i, true) + "Pawn"));
+				shape.setTexture(&textures.at("WPawn"));
 				break;
 			}
 			case Cell::WRook:
 			{
-				shape.setTexture(&textures.at(wichTexture(i, true) + "Rook"));
+				shape.setTexture(&textures.at("WRook"));
 				break;
 			}
 			case Cell::WKnight:
 			{
-				shape.setTexture(&textures.at(wichTexture(i, true) + "Knight"));
+				shape.setTexture(&textures.at("WKnight"));
 				break;
 			}
 			case Cell::WBishop:
 			{
-				shape.setTexture(&textures.at(wichTexture(i, true) + "Bishop"));
+				shape.setTexture(&textures.at("WBishop"));
 				break;
 			}
 			case Cell::WQueen:
 			{
-				shape.setTexture(&textures.at(wichTexture(i, true) + "Queen"));
+				shape.setTexture(&textures.at("WQueen"));
 				break;
 			}
 			case Cell::WKing:
 			{
-				shape.setTexture(&textures.at(wichTexture(i, true) + "King"));
+				shape.setTexture(&textures.at("WKing"));
 				break;
 			}
 			}

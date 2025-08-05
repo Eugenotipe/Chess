@@ -7,6 +7,9 @@ int main()
 
 	sf::RenderWindow window(sf::VideoMode({ 1000, 1000 }), "Chess");
 	window.setFramerateLimit(60);
+	sf::Image icon;
+	icon.loadFromFile("img/WQueen.png");
+	window.setIcon(sf::Vector2u(32, 32), icon.getPixelsPtr());
 
 	Game game;
 	game.setPosition({50.f, 50.f});
