@@ -37,10 +37,8 @@ const std::vector<Cell> START_DESK = { Cell::BRook, Cell::BKnight, Cell::BBishop
 										Cell::WRook, Cell::WKnight, Cell::WBishop, Cell::WQueen, Cell::WKing, Cell::WBishop, Cell::WKnight, Cell::WRook
 };
 
-const std::vector<std::string> PIECES = { "WFillPawn", "WFillRook", "WFillKnight", "WFillBishop", "WFillQueen", "WFillKing",
-											"BFillPawn", "BFillRook", "BFillKnight", "BFillBishop", "BFillQueen", "BFillKing",
-											"WHollowPawn", "WHollowRook", "WHollowKnight", "WHollowBishop", "WHollowQueen", "WHollowKing",
-											"BHollowPawn", "BHollowRook", "BHollowKnight", "BHollowBishop", "BHollowQueen", "BHollowKing"
+const std::vector<std::string> PIECES = { "WPawn", "WRook", "WKnight", "WBishop", "WQueen", "WKing",
+											"BPawn", "BRook", "BKnight", "BBishop", "BQueen", "BKing"
 };
 
 class Game : public sf::Drawable, public sf::Transformable
@@ -62,7 +60,6 @@ public:
 	void drawHighlight(sf::RenderTarget& target, sf::RenderStates states) const;
 
 	// === Вспомогательные функции ===
-	std::string wichTexture(int cell, bool pieceColor) const;
 	Cell getCell(sf::Vector2i touchPosition) const;
 
 	// === Обработка ввода ===
