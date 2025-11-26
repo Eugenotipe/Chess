@@ -1,4 +1,4 @@
-﻿#pragma once
+#pragma once
 #include <vector>
 #include <map>
 #include <iostream>
@@ -8,7 +8,7 @@ constexpr int SIZE{8};
 constexpr int DESK_SIZE{ SIZE * SIZE };
 constexpr int FIELD_SIZE{ 900 };
 constexpr int CELL_SIZE{ 100 };
-constexpr double MULT{100.f};
+constexpr float MULT{100.f};
 
 enum struct Cell
 {

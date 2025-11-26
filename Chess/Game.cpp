@@ -1,12 +1,19 @@
-﻿#include "Game.h"
+#include "Game.h"
 
 Game::Game()
 {
-	font.openFromFile("fonts/alagard-12px-unicode.ttf");
+  if (!font.openFromFile("fonts/alagard-12px-unicode.ttf"))
+  {
+    sf::err().rdbuf(nullptr);
+  }
+
 	for (std::string piece : PIECES)
 	{
 		textures[piece] = sf::Texture();
-		textures[piece].loadFromFile("img/" + piece + ".png");
+    if (!textures[piece].loadFromFile("img/" + piece + ".png"))
+    {
+      sf::err().rdbuf(nullptr);
+    }
 	}
 	Init();
 }
@@ -180,4 +187,9 @@ void Game::mouseLeftPressed(sf::Vector2i mousePosition)
 Cell Game::getCell(sf::Vector2i touchPosition) const
 {
 	return board[(touchPosition.y - 1) * SIZE + (touchPosition.x - 1)];
+}
+
+void Game::move(int start_cell, int end_cell)
+{
+  
 }

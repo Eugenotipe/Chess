@@ -1,4 +1,4 @@
-﻿#include <SFML/Graphics.hpp>
+#include <SFML/Graphics.hpp>
 #include "Game.h"
 
 int main()
@@ -8,7 +8,12 @@ int main()
 	sf::RenderWindow window(sf::VideoMode({ 1000, 1000 }), "Chess");
 	window.setFramerateLimit(60);
 	sf::Image icon;
-	icon.loadFromFile("img/WQueen.png");
+
+  if (!icon.loadFromFile("img/WQueen.png"))
+  {
+    sf::err().rdbuf(nullptr);
+  }
+
 	window.setIcon(sf::Vector2u(32, 32), icon.getPixelsPtr());
 
 	Game game;
